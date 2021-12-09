@@ -74,9 +74,7 @@
         ],
         "env": [],
         "x": 254,
-        "y": 139,
-        "w": 732,
-        "h": 182
+        "y": 139
     },
     {
         "id": "e0e4aaf1.023a08",
@@ -4680,7 +4678,7 @@
         "type": "function",
         "z": "3fb469fd.146e66",
         "name": "",
-        "func": "var vial = {};\nvar totem = {};\n\n// caso cuando se cambia el numero del vial\nif (msg.topic == \"numero_vial\"){\n    flow.set(\"numero_vial\", msg.payload);\n}\n// caso cuando se cambia el numero del totem\nelse if (msg.topic == \"totem_id\"){\n    flow.set(\"totem_id\", msg.payload);\n}\nvial = flow.get(\"vial_\"+ flow.get(\"numero_vial\"));// ponemos en \"vial\" la referencia al objeto correspondiente\ntotem = vial[flow.get(\"totem_id\")]; // ponemos en \"totem\" la referencia al objeto totem correspondiente. Recordemos que vial_1 contiene varios totems y cada totem contiene varias\n// propiedades\n//node.warn(totem);\n\n//node.send([{\"payload\":totem.peso}, {\"payload\":totem.peso_estable}, {\"payload\":totem.matricula}])\nreturn [[{\"payload\":totem.peso}], [{\"payload\":totem.peso_estable}], [{\"payload\":totem.matricula_numero}], [{\"payload\":1}]];\n//return [[{\"payload\":totem.peso}], [null], [null]];",
+        "func": "var vial = {};\nvar totem = {};\n// cambio para test\n// caso cuando se cambia el numero del vial\nif (msg.topic == \"numero_vial\"){\n    flow.set(\"numero_vial\", msg.payload);\n}\n// caso cuando se cambia el numero del totem\nelse if (msg.topic == \"totem_id\"){\n    flow.set(\"totem_id\", msg.payload);\n}\nvial = flow.get(\"vial_\"+ flow.get(\"numero_vial\"));// ponemos en \"vial\" la referencia al objeto correspondiente\ntotem = vial[flow.get(\"totem_id\")]; // ponemos en \"totem\" la referencia al objeto totem correspondiente. Recordemos que vial_1 contiene varios totems y cada totem contiene varias\n// propiedades\n//node.warn(totem);\n\n//node.send([{\"payload\":totem.peso}, {\"payload\":totem.peso_estable}, {\"payload\":totem.matricula}])\nreturn [[{\"payload\":totem.peso}], [{\"payload\":totem.peso_estable}], [{\"payload\":totem.matricula_numero}], [{\"payload\":1}]];\n//return [[{\"payload\":totem.peso}], [null], [null]];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
