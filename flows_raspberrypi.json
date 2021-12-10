@@ -74,7 +74,9 @@
         ],
         "env": [],
         "x": 254,
-        "y": 139
+        "y": 139,
+        "w": 732,
+        "h": 182
     },
     {
         "id": "e0e4aaf1.023a08",
@@ -2294,6 +2296,55 @@
             [
                 "4fe5c2e04a2c8a4d",
                 "e8a99e018cd135dd"
+            ]
+        ]
+    },
+    {
+        "id": "37e44981b1215689",
+        "type": "http request",
+        "z": "781791c3.e727",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.0.52:1880",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 890,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5940e49480595ef",
+        "type": "inject",
+        "z": "781791c3.e727",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "/projects/test_project/branches/remote/origin/origin/status",
+        "payloadType": "str",
+        "x": 680,
+        "y": 500,
+        "wires": [
+            [
+                "37e44981b1215689"
             ]
         ]
     },
